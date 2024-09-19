@@ -26,6 +26,7 @@ public class ExcelReader {
 
             long id = (long) row.getCell(0).getNumericCellValue();
             String typeStr = dataFormatter.formatCellValue(row.getCell(1));
+            if (typeStr == null || typeStr.isEmpty()) continue;
             EmployeeType type = EmployeeType.valueOf(typeStr.toUpperCase());
             String email = dataFormatter.formatCellValue(row.getCell(2));
             String phone = dataFormatter.formatCellValue(row.getCell(3));
