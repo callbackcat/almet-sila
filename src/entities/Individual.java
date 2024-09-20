@@ -2,83 +2,33 @@ package src.entities;
 
 import src.interfaces.Employee;
 
-public class Individual implements Employee {
-    private long id;
-    private String email;
-    private String phone;
-    private String address;
-    private BankAccount bankAccount;
-    private String name;
-    private String surname;
+public class Individual extends Employee {
+    private String firstName;
+    private String lastName;
     private boolean hasChildren;
     private int age;
 
-    public Individual(long id, String email, String phone, String address, BankAccount bankAccount, String name, String surname, boolean hasChildren, int age) {
-        this.id = id;
-        this.email = email;
-        this.phone = phone;
-        this.address = address;
-        this.bankAccount = bankAccount;
-        this.name = name;
-        this.surname = surname;
+    public Individual(long id, String email, String phone, String address, BankAccount bankAccount, String firstName, String lastName, boolean hasChildren, int age) {
+        super(id, email, phone, address, bankAccount);
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.hasChildren = hasChildren;
         this.age = age;
     }
 
-    @Override
-    public long getId() {
-        return id;
+    public String getFirstName() {
+        return firstName;
     }
 
-    @Override
-    public String getEmail() {
-        return email;
+    public String getLastName() {
+        return lastName;
     }
 
-    @Override
-    public String getPhone() {
-        return phone;
-    }
-
-    @Override
-    public String getAddress() {
-        return address;
-    }
-
-    @Override
-    public BankAccount getBankAccount() {
-        return bankAccount;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public boolean isHasChildren() {
+    public boolean hasChildren() {
         return hasChildren;
-    }
-
-    public void setHasChildren(boolean hasChildren) {
-        this.hasChildren = hasChildren;
     }
 
     public int getAge() {
         return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 }

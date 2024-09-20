@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String filePath = "src/test.xlsx";
+        String filePath = "test.xlsx";
         List<Employee> employees = ExcelReader.readExcelFile(filePath);
 
         int individualCount = 0;
@@ -20,7 +20,7 @@ public class Main {
             if (employee instanceof Individual individual) {
                 individualCount++;
                 if (individual.getAge() < 20) {
-                    System.out.println("Младше 20 лет: " + individual.getName() + " " + individual.getSurname());
+                    System.out.println("Младше 20 лет: " + individual.getFirstName() + " " + individual.getLastName());
                 }
             } else if (employee instanceof Company) {
                 companyCount++;

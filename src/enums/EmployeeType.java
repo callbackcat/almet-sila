@@ -5,5 +5,8 @@ public enum EmployeeType {
     IND,
 
     // Company employee
-    COM
+    COM,
+
+    // Unknown employee type
+    UNKNOWN
 }
